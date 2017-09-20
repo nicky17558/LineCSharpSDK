@@ -13,20 +13,20 @@ Line Login 使用方法
 
 轉導至Line OAuth 網址 => 驗證後將導回 CallBack URL =>取得 兌換Token的 Code => 使用 Token 取得 user Profile
 
-LineLoginClient loginClient = new LineLoginClient(ClientId, Secret, CallBackUrl);
+LineLoginClient loginClient = new LineLoginClient(ClientId, Secret, CallBackUrl); ///C#
        
-var code = Request.QueryString["code"];
+var code = Request.QueryString["code"];///C#
 
-if (string.IsNullOrEmpty(code))
-{
-    Response.Redirect(loginClient.GetOAuthUrl("abcd1234"));
-}
-else
-{
-   var token = loginClient.GetLineLoginAccessToken(code);
-   var lineUser = loginClient.GetLineLoginUserProfile(token);
- }
-}
+if (string.IsNullOrEmpty(code))///C#
+{///C#
+    Response.Redirect(loginClient.GetOAuthUrl("abcd1234"));///C#
+}///C#
+else///C#
+{///C#
+   var token = loginClient.GetLineLoginAccessToken(code);///C#
+   var lineUser = loginClient.GetLineLoginUserProfile(token);///C#
+ }///C#
+}///C#
 
 ------------------------------------------------------------------------------------------------------------------------------
 
