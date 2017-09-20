@@ -5,9 +5,11 @@ namespace LineSample
 {
     public partial class UserProfile : System.Web.UI.Page
     {
-        const string clientId = "<clientId>";
-        const string password = "<secrect>";
-        const string transUrl = "<callBackUrl>";
+
+
+        const string clientId = "<clientId>";//
+        const string password = "<screct>";
+        const string transUrl = "<callback url>";
         LineLoginClient loginClient = new LineLoginClient(clientId, password, transUrl);
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -21,9 +23,10 @@ namespace LineSample
             }
             else
             {
-                var token = loginClient.GetLineLoginAccessToken(code);
 
+                var token = loginClient.GetLineLoginAccessToken(code);
                 var lineUser = loginClient.GetLineLoginUserProfile(token);
+
                 Label2.Text = lineUser.userId;
                 Label1.Text = lineUser.displayName;
                 Image1.ImageUrl = lineUser.pictureUrl;

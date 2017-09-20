@@ -5,9 +5,11 @@ namespace LineSample
 {
     public partial class LineNotify : System.Web.UI.Page
     {
-        const string clientId = "<clientId>";
-        const string password = "<secrect>";
-        const string transUrl = "<callBackUrl>";
+
+
+        const string clientId = "<clientId>";//
+        const string password = "<screct>";
+        const string transUrl = "<callback url>";
         LineNotifyClient client = new LineNotifyClient(clientId, password, transUrl);
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -30,9 +32,6 @@ namespace LineSample
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-
-             client = new LineNotifyClient(clientId, password, transUrl);
-
             if (Session["LineToken"] != null)
             {
                 var token = Session["LineToken"].ToString();
@@ -52,9 +51,6 @@ namespace LineSample
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-
-             client = new LineNotifyClient(clientId, password, transUrl);
-
             if (Session["LineToken"] != null)
             {
                 var token = Session["LineToken"].ToString();
@@ -69,9 +65,6 @@ namespace LineSample
 
         protected void Button3_Click(object sender, EventArgs e)
         {
-
-            client = new LineNotifyClient(clientId, password, transUrl);
-
             if (Session["LineToken"] != null)
             {
                 var token = Session["LineToken"].ToString();
