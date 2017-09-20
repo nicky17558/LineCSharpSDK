@@ -26,7 +26,6 @@ else
 {
    var token = loginClient.GetLineLoginAccessToken(code);
    var lineUser = loginClient.GetLineLoginUserProfile(token);
- }
 }
 </code></pre>
 
@@ -51,7 +50,6 @@ else
 {
    var token = client.GetLineAccessToken(code);
    client.SendLineNotifiy(token, "Hello");
- }
 }
 </code></pre>
 
